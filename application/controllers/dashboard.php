@@ -22,11 +22,12 @@ class dashboard extends CI_Controller {
 	}
     public function addPost(){
         $this->load->model('post');
+        $username = $this->session->userdata('username');
         $data = array(
-            'username' => $this->input->post('username'),
+            'username' => $username,
             'post' => $this->input->post('post'),
-            'CreatedAt' => time(),
-            'UpdatedAt' => time(),
+            'CreatedAt' => date("Y-m-d H:i:s"),
+            'UpdatedAt' => date("Y-m-d H:i:s"),
         );
         $this->post->addPost($data);
         $this->session->set_flashdata('info', 'Post berhasil');

@@ -59,7 +59,7 @@ $(document).ready(function() {
 			
 			var c = tab
         .row(tab.row( $(this).parents('tr') ).index()).data()[2];
-	if(y==0){
+	if(y == 0){
 		console.log("y jadi 1");
 		
 		$(this).parents('tr').children('td').eq(1).html("<textarea>"+c+"</textarea><button class='sub btn btn-primary'>save</button>");

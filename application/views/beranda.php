@@ -159,39 +159,40 @@ $("input[name='date']").val(today);
 </script>
 </head>
 <body>
-<?php include ('navbar.php');?>
-
-<div class='con'>
-<div class="row">
-    <div class="col-md-auto">
-<form id='kap'>
-<textarea name='statz' autofocus placeholder="write something to let the world knows what's inside your mind"></textarea>
-<div class='statset'>
-<input type='text' name='name' value='<?php echo $username; ?>'><input name='date' type='text'>
-</div>
-<button class='btn prima'>Sung!</button>
-</form>
+    <?php include ('navbar.php');?>
+    <div class='con'>
+    <div class="row">
+        <div class="col-md-auto">
+            <form id='kap' method="POST" action="<?php echo site_url('dashboard/addPost'); ?>">
+                <textarea name='post' autofocus placeholder="write something to let the world knows what's inside your mind"></textarea>
+                <div class='statset'>
+                    <input type='text' name='name' value='<?php echo $username; ?>'><input name='date' type='text' value="<?php echo date("Y-m-d H:i"); ?>">
+                </div>
+                <input type="submit" class='btn prima' value="Sung">
+            </form>
+        </div>
+        <div class="col">
+            <table id="ezpa" class="table" style="width:100%">
+                <thead style='display:none;'>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Post</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <?php
+                    foreach ($list as $post) {
+                  ?>
+                        <tr>
+                            <td><?php echo $post['post']?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="col">
-<table id="ezpa" class="table" style="width:100%">
-        <thead style='display:none;'>
-            <tr>
-			<th>id</th>
-                <th>Name</th>
-                <th>Post</th>
-            </tr>
-        </thead>
-        <tbody>
-          
-        </tbody>
-
-    </table>
-    </div>
-
-  </div>
-
-
-
 </div>
-
 <?php include ('footer.php'); ?>
