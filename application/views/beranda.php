@@ -38,9 +38,13 @@
 
                             var id = tab
                                 .row(tab.row( $(this).parents('tr') ).index()).data()[3];
+                            var username = tab
+                                .row(tab.row( $(this).parents('tr') ).index()).data()[0];
 
                             if(full[0] === '<?php echo $username?>'){
                                 e += `<div class="bgr"><a href="<?php base_url();?>dashboard/delPost/${id}" class="button">delete</a> <a href="javascript:;" class="sbutton">edit</a></div>`;
+                            } else {
+                                e += `<div class="bgr"><a href="<?php base_url();?>dashboard/addFriend/${username}" class="button">add friend</a></div>`;
                             }
 
 

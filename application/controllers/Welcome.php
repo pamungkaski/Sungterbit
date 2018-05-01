@@ -12,7 +12,7 @@ class Welcome extends CI_Controller {
 		$data = array();
 		$data['title']='Homepage';
 		if( $this->session->userdata('udahlogin') != NULL ){
-			redirect('dashboard/index');
+			redirect('dashboard');
 		} else {
 			$this->load->view('homepage', $data);
 		}

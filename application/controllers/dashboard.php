@@ -34,13 +34,25 @@ class dashboard extends CI_Controller {
     }
     public function addFriend($second){
         $this->load->model('friend');
-        $data = array(
-            'first' => $this->session->userdata('username'),
-            'second' => $second,
-            'CreatedAt' => time(),
-        );
-        $this->friend->addFrined($data);
-        $this->session->set_flashdata('info', 'Add Friend berhasil');
+        $first = $this->session->userdata('username');
+        if ($this->friend->cekFriend($first, $second)) {
+            $data1 = array(
+                'first' => $first,
+                'second' => $second,
+                'CreatedAt' => date("Y-m-d H:i:s"),
+            );
+            $data2 = array(
+                'second' => $first,
+                'first' => $second,
+                'CreatedAt' => date("Y-m-d H:i:s"),
+            );
+            $this->friend->addFriend($data1);
+            $this->friend->addFriend($data2);
+            $this->session->set_flashdata('info', 'Add Friend berhasil');
+        } else {
+            echo "<script>alert('Already Friend')</script>";
+        }
+        echo "<script>setTimeout(\"location.href ='".base_url()."'\", 0);</script>";
     }
     public function editPost($id){
         $this->load->model('post');

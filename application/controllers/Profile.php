@@ -14,14 +14,17 @@ class Profile extends CI_Controller {
         $this->load->model('user');
         $this->load->model('profile_mod');
         $this->load->model('post');
+        $this->load->model('friend');
         $username = $this->session->userdata('username');
         $user = $this->user->getUser($username);
         $profile = $this->profile_mod->getProfile($username);
-        $post =  $this->post->getgetAllPostSpecUser($username);
+        $post =  $this->post->getAllPostSpecUser($username);
+        $friend =  $this->friend->getAllFriends($username);
         $data = array(
             'user' => $user,
             'profile' => $profile,
-            'list' => $post
+            'list' => $post,
+            'friends' => $friend
         );
         $data['title'] = 'Profile';
         $this->load->view('profile', $data);
