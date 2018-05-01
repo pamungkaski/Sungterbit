@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 01, 2018 at 02:47 PM
+-- Generation Time: May 01, 2018 at 03:20 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.8
 
@@ -35,8 +35,8 @@ CREATE TABLE `friends` (
 
 CREATE TABLE `post` (
   `username` varchar(20) NOT NULL,
-  `CreatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `UpdatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `CreatedAt` timestamp NULL DEFAULT NULL,
+  `UpdatedAt` timestamp NULL DEFAULT NULL,
   `id` int(11) NOT NULL,
   `post` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
