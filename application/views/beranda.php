@@ -36,8 +36,11 @@
                         "targets": [ 1 ],"data": null,"orderable": false,"render": function(data, type, full, meta){
                             var e = '<div class="neym">'+data[0]+'</div><div class="d8">'+data[2]+'</div>';//data 0
 
+                            var id = tab
+                                .row(tab.row( $(this).parents('tr') ).index()).data()[3];
+
                             if(full[0] === '<?php echo $username?>'){
-                                e += '<div class="bgr"><a href="<?php site_url('dashboard/delPost')?>" class="button">delete</a> <a href="javascript:;" class="sbutton">edit</a></div>';
+                                e += `<div class="bgr"><a href="<?php base_url();?>dashboard/delPost/${id}" class="button">delete</a> <a href="javascript:;" class="sbutton">edit</a></div>`;
                             }
 
 
@@ -85,7 +88,7 @@
                 if(y==0){
                     console.log("y jadi 1");
 
-                    $(this).parents('tr').children('td').eq(1).html(`<form method='POST' action="<?php site_url();?>editPost/${id}" ><textarea name='post'>${c}</textarea><input type='submit' class='sub btn prima' value='save'></form>`);
+                    $(this).parents('tr').children('td').eq(1).html(`<form method='POST' action="<?php base_url();?>dashboard/editPost/${id}" ><textarea name='post'>${c}</textarea><input type='submit' class='sub btn prima' value='save'></form>`);
                     y = 1;
                 }else{
                     console.log("y jadi 0");

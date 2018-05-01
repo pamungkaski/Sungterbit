@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class dashboard extends CI_Controller {
 
-
 	function __construct(){
 		parent::__construct();
 		if ($this->session->userdata('udahlogin') == null)
@@ -31,7 +30,7 @@ class dashboard extends CI_Controller {
         );
         $this->post->addPost($data);
         $this->session->set_flashdata('info', 'Post berhasil');
-        redirect('dashboard/index');
+        redirect('dashboard');
     }
     public function addFriend($second){
         $this->load->model('friend');
@@ -56,7 +55,7 @@ class dashboard extends CI_Controller {
     public function delPost($id){
         $this->post->delPost($id);
         $this->session->set_flashdata('info','Hapus berhasil');
-        redirect('dashboard/index');
+        redirect('dashboard');
     }
     public function settings(){
         $this->load->model('user');
