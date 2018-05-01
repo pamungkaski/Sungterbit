@@ -46,15 +46,12 @@ class dashboard extends CI_Controller {
     public function editPost($id){
         $this->load->model('post');
         $data = array(
-            'id' => $id,
-            'username' => $this->input->post('username'),
             'post' => $this->input->post('post'),
-            'CreatedAt' => $this->input->post('CreatedAt'),
             'UpdatedAt' => date("Y-m-d H:i:s"),
         );
         $this->post->updPost($data, $id);
         $this->session->set_flashdata('info', 'Edit Post berhasil');
-        redirect('dashboard/index');
+        redirect('dashboard');
     }
     public function delPost($id){
         $this->post->delPost($id);

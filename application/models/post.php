@@ -7,6 +7,11 @@ class Post extends CI_Model {
 		$data = $this->db->get('post');
 		return $data->result_array();
 	}
+    public function getAllPostSpecUser($username) {
+        $this->db->where('username', $username);
+        $data = $this->db->get('post');
+        return $data->result_array();
+    }
 
 	public function addPost($post){
 		$this->db->insert('post', $post);

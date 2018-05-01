@@ -13,12 +13,15 @@ class Profile extends CI_Controller {
     public function index() {;
         $this->load->model('user');
         $this->load->model('profile_mod');
+        $this->load->model('post');
         $username = $this->session->userdata('username');
         $user = $this->user->getUser($username);
         $profile = $this->profile_mod->getProfile($username);
+        $post =  $this->post->getgetAllPostSpecUser($username);
         $data = array(
             'user' => $user,
-            'profile' => $profile
+            'profile' => $profile,
+            'list' => $post
         );
         $data['title'] = 'Profile';
         $this->load->view('profile', $data);
