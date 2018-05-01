@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class profile extends CI_Model {
+class profile_mod extends CI_Model {
 
     public function getAllProfiles() {
         $data = $this->db->get('profile');

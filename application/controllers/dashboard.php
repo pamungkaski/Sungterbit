@@ -49,7 +49,7 @@ class dashboard extends CI_Controller {
             'username' => $this->input->post('username'),
             'post' => $this->input->post('post'),
             'CreatedAt' => $this->input->post('CreatedAt'),
-            'UpdatedAt' => time(),
+            'UpdatedAt' => date("Y-m-d H:i:s"),
         );
         $this->post->updPost($data, $id);
         $this->session->set_flashdata('info', 'Edit Post berhasil');
@@ -60,12 +60,23 @@ class dashboard extends CI_Controller {
         $this->session->set_flashdata('info','Hapus berhasil');
         redirect('dashboard/index');
     }
-
+    public function settings(){
+        $this->load->model('user');
+        $this->load->model('profile_mod');
+        $username = $this->session->userdata('username');
+	    $user = $this->user->getUser($username);
+	    $profile = $this->profile_mod->getProfile($username);
+	    $data = array(
+	        'user' => $user,
+            'profile' => $profile
+        );
+        $this->load->view('settings', $data);
+    }
     public function logout(){
         $this->load->model('user_log');
         $ses_id = $this->session->userdata('ses_id');
         $data = $this->user_log->getSession($ses_id);
-        $data['finish'] =  time();
+        $data['finish'] =  date("Y-m-d H:i:s");;
         $this->user_log->destSession($data, $ses_id);
         $this->session->sess_destroy();
         redirect('Welcome');

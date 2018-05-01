@@ -1,4 +1,4 @@
-<?php $active="p"; include ('/header.php');?>
+<?php $active="p"; include ('header.php');?>
 <script>
 $(document).ready(function() {
    var tab = $('#ezpa').DataTable({
@@ -121,18 +121,18 @@ k.map(function(obj){
 </script>
 </head>
 <body>
-<?php include ('/navbar.php');?>
+<?php include ('navbar.php');?>
 <div class='con'>
 <div class='container'>
 
 <div class="row">
   <div class="col-md-auto">
   <div class='sideba'>
-  <img class='rounded-circle' src='./img/dondo.jpg'>
-  <h1>Dendi</h1>
-  <h4>Danil Ishutin</h4>
+  <img class='rounded-circle' src='<?php echo base_url('img/dondo.jpg');?>'>
+  <h1><?php echo $user['username']?></h1>
+  <h4><?php echo $profile['name']?></h4>
   <div class='about'>
-  i'm Dendi, i'm a legendary midlaner. I will never leave NaVi because i'm naive
+      <?php echo $profile['bio']?>
   </div>
   </div>
   </div>
@@ -178,4 +178,4 @@ k.map(function(obj){
 </div>
 </div>
 
-<?php include ('/footer.php'); ?>
+<?php include ('footer.php'); ?>

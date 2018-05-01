@@ -9,7 +9,7 @@ class user_log extends CI_Model {
 		return $data->result_array();
 	}
 	public function addSession($post) {
-		$this->db->insert('post', $post);
+		$this->db->insert('session', $post);
         return $this->db->insert_id();
 	}
 	public function getSession($id){

@@ -31,6 +31,7 @@ class Welcome extends CI_Controller {
             $this->load->model('user_log');
             $data =  array(
                 'username' => $username,
+                'start' => date("Y-m-d H:i:s"),
             );
 
             $ses_id = $this->user_log->addSession($data);
