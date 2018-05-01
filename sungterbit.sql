@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 30, 2018 at 09:25 PM
+-- Generation Time: May 01, 2018 at 02:47 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.8
 
@@ -41,6 +41,14 @@ CREATE TABLE `post` (
   `post` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`username`, `CreatedAt`, `UpdatedAt`, `id`, `post`) VALUES
+('test', '2018-05-01 08:28:12', '2018-05-01 08:28:12', 1, ''),
+('test', '2018-05-01 08:55:54', '2018-05-01 08:55:54', 2, '');
+
 -- --------------------------------------------------------
 
 --
@@ -50,9 +58,19 @@ CREATE TABLE `post` (
 CREATE TABLE `profile` (
   `username` varchar(20) NOT NULL,
   `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `bio` text NOT NULL,
   `birthdate` varchar(20) NOT NULL,
   `city` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `profile`
+--
+
+INSERT INTO `profile` (`username`, `name`, `email`, `bio`, `birthdate`, `city`) VALUES
+('pamung', '', 'pamung@gmail.com', '', '', ''),
+('test', 'Dendi Boss', 'test@gmail.com', 'ETA GEGE', '', '');
 
 -- --------------------------------------------------------
 
@@ -63,9 +81,19 @@ CREATE TABLE `profile` (
 CREATE TABLE `session` (
   `id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `start` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `start` timestamp NULL DEFAULT NULL,
   `finish` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `session`
+--
+
+INSERT INTO `session` (`id`, `username`, `start`, `finish`) VALUES
+(1, 'test', '2018-05-01 04:13:35', '2018-05-01 04:17:24'),
+(2, 'test', '2018-05-01 04:18:15', '2018-05-01 04:57:28'),
+(3, 'test', '2018-05-01 04:58:39', NULL),
+(4, 'test', '2018-05-01 07:36:35', '2018-05-01 07:46:01');
 
 -- --------------------------------------------------------
 
@@ -77,6 +105,14 @@ CREATE TABLE `user` (
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `password`) VALUES
+('pamung', 'shurtugal'),
+('test', 'test');
 
 --
 -- Indexes for dumped tables
@@ -127,9 +163,9 @@ ALTER TABLE `friends`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `session`
 --
 ALTER TABLE `session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
