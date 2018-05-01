@@ -24,7 +24,7 @@
                 "order":[[ 0,"dsc"]],
                 "orderCellsTop": true,
                 //"ajax": '<?php //site_url('Editp')?>//',
-                "ajax": "http://localhost/ci/index.php/Editp",
+                "ajax": "<?php echo site_url('Editp')?>",
                 "searching": false,
                 "lengthChange": false,
                 "columnDefs": [
