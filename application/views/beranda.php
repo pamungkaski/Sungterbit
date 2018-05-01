@@ -167,7 +167,7 @@ $("input[name='date']").val(today);
 <form id='kap'>
 <textarea name='statz' autofocus placeholder="write something to let the world knows what's inside your mind"></textarea>
 <div class='statset'>
-<input type='text' name='name' value='dendi'><input name='date' type='text'>
+<input type='text' name='name' value='<?php echo $username; ?>'><input name='date' type='text'>
 </div>
 <button class='btn prima'>Sung!</button>
 </form>
@@ -194,4 +194,4 @@ $("input[name='date']").val(today);
 
 </div>
 
-<?php include ('/footer.php'); ?>
+<?php include ('footer.php'); ?>

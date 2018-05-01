@@ -14,7 +14,7 @@ class Register extends CI_Controller {
         $data['title'] = 'Register';
         $this->load->view('register', $data);
     }
-    public function addUser(){
+    public function add_User(){
         $this->load->model('user');
         $this->load->model('profile');
         $user = array(
@@ -25,10 +25,9 @@ class Register extends CI_Controller {
         $profile = array(
             'username' => $this->input->post('username'),
         );
-        echo '<script> console.log($user) </script>';
         $this->user->addUser($user);
         $this->profile->addProfile($profile);
         $this->session->set_flashdata('info', 'Register berhasil');
-        redirect('Welcome/formLogin');
+        redirect('Welcome/form_Login');
     }
 }

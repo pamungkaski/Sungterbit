@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class dashboard extends CI_Model {
+class Post extends CI_Model {
 	
 	public function getAllPost() {
 		$data = $this->db->get('post');

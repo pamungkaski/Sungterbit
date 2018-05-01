@@ -29,25 +29,22 @@
 </div>-->
 <div class="container h-100 logreg">
     <div class="row h-100 justify-content-center align-items-center">
-        <form class="col-12" id='logr'>
+        <form class="col-12" id='logr' method="POST" action="<?php echo site_url('Register/add_User'); ?>">
             <div class='ks'>
                 <h1>Register</h1>
-                <form method="POST" action="<?php echo site_url('Register/addUser'); ?>">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input name="username" type="text" class="form-control" id="username" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input name="email" type="email" class="form-control" placeholder="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input name="pass" type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                    <input type="submit" class='btn primover' Value="Register">
-                </form>
-                <?php echo $this->session->flashdata('info'); ?>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input name="username" type="text" class="form-control" id="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input name="email" type="email" class="form-control" placeholder="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input name="pass" type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <input type="submit" class='btn primover' Value="Register">
             </div>
         </form>
 

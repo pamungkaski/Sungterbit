@@ -36,7 +36,7 @@
 <body>
 
 <div class="slider demo">
-    <div class='isi'><img src="<?php echo base_url('img/3.jpg');?>"><div class='iz'><div class='conta'><h1>Sungterbit</h1><p>Sungterbit is a simple lite microblogging platform</p><a href="<?php echo site_url('Welcome/formLogin')?>">Log in</a></div></div></div>
+    <div class='isi'><img src="<?php echo base_url('img/3.jpg');?>"><div class='iz'><div class='conta'><h1>Sungterbit</h1><p>Sungterbit is a simple lite microblogging platform</p><a href="<?php echo site_url('Welcome/form_Login')?>">Log in</a></div></div></div>
     <div class='isi'><img src="<?php echo base_url('img/2.jpg');?>"><div class='iz'><div class='conta'><h1>Instant</h1><p>It spreads your messages at real time</p></div></div></div>
     <div class='isi'><img src="<?php echo base_url('img/1.jpg');?>"><div class='iz'><div class='conta'><h1>Wide</h1><p>This social media is wide because anyone can see anyone's post</p></div></div></div>
 </div>

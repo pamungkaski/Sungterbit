@@ -17,13 +17,13 @@ class Welcome extends CI_Controller {
 			$this->load->view('homepage', $data);
 		}
 	}
-    public function formLogin(){
+    public function form_Login(){
         $data = array();
         $data['title'] = 'Login';
         $this->load->view('login', $data);
     }
 	public function login(){
-	    $username = $this->input->post('user');
+	    $username = $this->input->post('username');
 		$this->db->where('username', $username);
 		$this->db->where('password', $this->input->post('pass'));
 		$u = $this->db->get('user');
@@ -31,28 +31,17 @@ class Welcome extends CI_Controller {
             $this->load->model('user_log');
             $data =  array(
                 'username' => $username,
-                'start' => time(),
             );
 
             $ses_id = $this->user_log->addSession($data);
 
 			$this->session->set_userdata('udahlogin', 'ok');
-			$this->session->set_userdata('username', $this->input->post('user'));
+			$this->session->set_userdata('username', $username);
 			$this->session->set_userdata('ses_id', $ses_id);
 			redirect('dashboard');
 		}else{
 			$this->session->set_flashdata('info', 'username atau password salah');
-			redirect('Welcome/formLogin');
+			redirect('Welcome/form_Login');
 		}
-	}
-
-	public function logout(){
-        $this->load->model('user_log');
-        $ses_id = $this->session->userdata('ses_id');
-        $data = $this->user_log->getSession($ses_id);
-        $data['finish'] =  time();
-        $this->user_log->destSession($data, $ses_id);
-        $this->session->sess_destroy();
-		redirect('Welcome');
 	}
 }

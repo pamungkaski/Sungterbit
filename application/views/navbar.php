@@ -18,7 +18,7 @@
         <a class="nav-link" href="./settings.php">Settings</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
+        <a class="nav-link" href='<?php echo site_url("dashboard/logout");?>'>Logout</a>
       </li>
     </ul>
 	</div>

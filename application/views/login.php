@@ -14,21 +14,19 @@
 <body>
 <div class="container h-100 logreg">
     <div class="row h-100 justify-content-center align-items-center">
-        <form class="col-12" id='logr'>
+        <form class="col-12" id='logr' method="POST" action="<?php echo site_url('Welcome/login'); ?>">
             <div class='ks'>
                 <h1>Login</h1>
-                <form method="POST" action="<?php echo site_url('Welcome/login'); ?>">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input  name="username" type="text" class="form-control" id="username" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input name="pass" type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                    <input type="submit" class='btn primover' Value="Log In">
-                </form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input  name="username" type="text" class="form-control" id="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input name="pass" type="password" class="form-control" id="password" placeholder="Password">
+                </div>
                 <?php echo $this->session->flashdata('info'); ?>
+                <input type="submit" class='btn primover' Value="Log In">
                 <div class='msge'><div>or</div>register <a href='<?php echo site_url("Register");?>'>here</a></div>
             </div>
         </form>
