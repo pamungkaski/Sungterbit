@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 01, 2018 at 04:11 PM
+-- Generation Time: May 01, 2018 at 06:19 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.8
 
@@ -27,6 +27,21 @@ CREATE TABLE `friends` (
   `CreatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `friends`
+--
+
+INSERT INTO `friends` (`id`, `first`, `second`, `CreatedAt`) VALUES
+(1, 'test', 'pamung', '2018-05-01 10:57:04'),
+(2, 'test', 'pamung', '2018-05-01 11:04:39'),
+(3, 'pamung', 'test', '2018-05-01 11:04:39'),
+(4, 'test', 'pamung', '2018-05-01 11:04:40'),
+(5, 'pamung', 'test', '2018-05-01 11:04:40'),
+(6, 'test', 'pamung', '2018-05-01 11:04:42'),
+(7, 'pamung', 'test', '2018-05-01 11:04:42'),
+(8, 'nyoba', 'pamung', '2018-05-01 11:14:29'),
+(9, 'pamung', 'nyoba', '2018-05-01 11:14:29');
+
 -- --------------------------------------------------------
 
 --
@@ -46,13 +61,9 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`username`, `CreatedAt`, `UpdatedAt`, `id`, `post`) VALUES
-('pamung', '2018-05-01 09:09:44', '2018-05-01 09:09:44', 3, 'ehehehehehe'),
-('pamung', '2018-05-01 09:09:49', '2018-05-01 09:09:49', 4, 'aweadsa'),
-('pamung', '2018-05-01 09:09:51', '2018-05-01 09:09:51', 5, 'awdawda'),
-('pamung', '2018-05-01 09:09:54', '2018-05-01 09:09:54', 6, 'awdawra'),
-('pamung', '2018-05-01 09:09:56', '2018-05-01 09:09:56', 7, 'awdawra'),
-('pamung', '2018-05-01 09:09:59', '2018-05-01 09:09:59', 8, 'fsafwefa'),
-('pamung', '2018-05-01 09:10:02', '2018-05-01 09:10:02', 9, 'awrqewr');
+('pamung', '2018-05-01 10:41:58', '2018-05-01 10:41:58', 21, 'adaweawe'),
+('test', '2018-05-01 10:52:08', '2018-05-01 10:52:08', 22, 'awdawdawd'),
+('test', '2018-05-01 10:52:11', '2018-05-01 10:52:11', 23, 'eradwa');
 
 -- --------------------------------------------------------
 
@@ -74,6 +85,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`username`, `name`, `email`, `bio`, `birthdate`, `city`) VALUES
+('nyoba', '', 'nyoba@gege', '', '', ''),
 ('pamung', 'Ehehehehhe', 'pamung@gmail.com', 'Gege Eta', '', ''),
 ('test', 'Dendi Boss', 'test@gmail.com', 'ETA GEGE', '', '');
 
@@ -99,7 +111,9 @@ INSERT INTO `session` (`id`, `username`, `start`, `finish`) VALUES
 (2, 'test', '2018-05-01 04:18:15', '2018-05-01 04:57:28'),
 (3, 'test', '2018-05-01 04:58:39', NULL),
 (4, 'test', '2018-05-01 07:36:35', '2018-05-01 07:46:01'),
-(5, 'pamung', '2018-05-01 08:28:04', NULL);
+(5, 'pamung', '2018-05-01 08:28:04', '2018-05-01 10:51:44'),
+(6, 'test', '2018-05-01 10:52:01', '2018-05-01 11:13:37'),
+(7, 'nyoba', '2018-05-01 11:13:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -117,6 +131,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`) VALUES
+('nyoba', 'nyoba'),
 ('pamung', 'wkwkwk'),
 ('test', 'test');
 
@@ -164,14 +179,14 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `session`
 --
 ALTER TABLE `session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
