@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 01, 2018 at 03:20 PM
+-- Generation Time: May 01, 2018 at 04:11 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.8
 
@@ -46,8 +46,13 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`username`, `CreatedAt`, `UpdatedAt`, `id`, `post`) VALUES
-('test', '2018-05-01 08:28:12', '2018-05-01 08:28:12', 1, ''),
-('test', '2018-05-01 08:55:54', '2018-05-01 08:55:54', 2, '');
+('pamung', '2018-05-01 09:09:44', '2018-05-01 09:09:44', 3, 'ehehehehehe'),
+('pamung', '2018-05-01 09:09:49', '2018-05-01 09:09:49', 4, 'aweadsa'),
+('pamung', '2018-05-01 09:09:51', '2018-05-01 09:09:51', 5, 'awdawda'),
+('pamung', '2018-05-01 09:09:54', '2018-05-01 09:09:54', 6, 'awdawra'),
+('pamung', '2018-05-01 09:09:56', '2018-05-01 09:09:56', 7, 'awdawra'),
+('pamung', '2018-05-01 09:09:59', '2018-05-01 09:09:59', 8, 'fsafwefa'),
+('pamung', '2018-05-01 09:10:02', '2018-05-01 09:10:02', 9, 'awrqewr');
 
 -- --------------------------------------------------------
 
@@ -69,7 +74,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`username`, `name`, `email`, `bio`, `birthdate`, `city`) VALUES
-('pamung', '', 'pamung@gmail.com', '', '', ''),
+('pamung', 'Ehehehehhe', 'pamung@gmail.com', 'Gege Eta', '', ''),
 ('test', 'Dendi Boss', 'test@gmail.com', 'ETA GEGE', '', '');
 
 -- --------------------------------------------------------
@@ -93,7 +98,8 @@ INSERT INTO `session` (`id`, `username`, `start`, `finish`) VALUES
 (1, 'test', '2018-05-01 04:13:35', '2018-05-01 04:17:24'),
 (2, 'test', '2018-05-01 04:18:15', '2018-05-01 04:57:28'),
 (3, 'test', '2018-05-01 04:58:39', NULL),
-(4, 'test', '2018-05-01 07:36:35', '2018-05-01 07:46:01');
+(4, 'test', '2018-05-01 07:36:35', '2018-05-01 07:46:01'),
+(5, 'pamung', '2018-05-01 08:28:04', NULL);
 
 -- --------------------------------------------------------
 
@@ -111,7 +117,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`) VALUES
-('pamung', 'shurtugal'),
+('pamung', 'wkwkwk'),
 ('test', 'test');
 
 --
@@ -163,9 +169,9 @@ ALTER TABLE `friends`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `session`
 --
 ALTER TABLE `session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
