@@ -10,14 +10,18 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data = array();
-		$data['title']='login dolo';
+		$data['title']='Homepage';
 		if( $this->session->userdata('udahlogin') != NULL ){
 			redirect('dashboard/index');
 		} else {
-			$this->load->view('formlogin', $data);
+			$this->load->view('homepage', $data);
 		}
 	}
-
+    public function formLogin(){
+        $data = array();
+        $data['title'] = 'Login';
+        $this->load->view('login', $data);
+    }
 	public function login(){
 	    $username = $this->input->post('user');
 		$this->db->where('username', $username);
@@ -35,11 +39,10 @@ class Welcome extends CI_Controller {
 			$this->session->set_userdata('udahlogin', 'ok');
 			$this->session->set_userdata('username', $this->input->post('user'));
 			$this->session->set_userdata('ses_id', $ses_id);
-
-			redirect('mahasiswa/coba');
+			redirect('dashboard');
 		}else{
 			$this->session->set_flashdata('info', 'username atau password salah');
-			redirect('Welcome');
+			redirect('Welcome/formLogin');
 		}
 	}
 

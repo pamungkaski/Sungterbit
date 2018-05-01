@@ -1,0 +1,37 @@
+html,body {
+  height: 100%;
+}
+body{
+	background: #009688;
+}
+.logreg{
+	color: #fff;
+	max-width: 600px;
+
+}
+.logreg form label{
+	font-weight: bold;
+}
+.logreg form .ks{
+	margin: 30px;
+}
+.logreg a{
+	color: #fff;
+	text-decoration: underline;
+}
+.logreg .msge{
+	margin-top: 10px;
+		text-align:center;
+		line-height: 30px;
+}
+.primover{
+	background: #009688;
+	border: 2px solid #fff;
+	color: #fff;
+	width: 100%;
+	margin-top: 10px;
+}
+.primover:hover{
+	background: #fff;
+	color: #009688;
+}

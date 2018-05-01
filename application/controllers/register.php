@@ -1,13 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class dashboard extends CI_Controller {
+class Register extends CI_Controller {
 
 
     function __construct(){
         parent::__construct();
-        if ($this->session->userdata('udahlogin') == null)
-            redirect('Welcome');
         $this->load->model('user');
         $this->load->model('profile');
     }
@@ -21,17 +19,16 @@ class dashboard extends CI_Controller {
         $this->load->model('profile');
         $user = array(
             'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
+            'password' => $this->input->post('pass'),
+            'email' => $this->input->post('email')
         );
         $profile = array(
             'username' => $this->input->post('username'),
-            'name' => $this->input->post('password'),
-            'birthdate' => $this->input->post('birthdate'),
-            'city' => $this->input->post('city'),
         );
+        echo '<script> console.log($user) </script>';
         $this->user->addUser($user);
         $this->profile->addProfile($profile);
         $this->session->set_flashdata('info', 'Register berhasil');
-        redirect('Welcome');
+        redirect('Welcome/formLogin');
     }
 }

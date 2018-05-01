@@ -1,0 +1,97 @@
+html,body {
+  height: 100%;
+}
+body{
+	background: #009688;
+}
+body *{
+	outline: none!important;
+}
+.slick-list,
+.slick-track {
+    height: 100%;
+}
+img{
+	object-fit: cover;
+width: 100%;
+    height: 100%;
+}
+.slick-dotted.slick-slider{
+	height: 100%;
+	margin-bottom: 0;
+}
+.slick-prev, .slick-next{
+	z-index: 9999!important;
+}
+.slick-prev{
+	left: 20px!important;
+}
+.slick-next{
+	right: 20px!important;
+}
+.slick-dots{
+	z-index: 999!important;
+	bottom: 20px;
+
+}
+.slick-dots li{
+		background: #ffffff8f;
+border-radius: 50%;
+}
+
+#kappa{
+	position: absolute;top:0;left:0;right:0;
+	z-index:999;
+	    background: rgba(0, 0, 0, 0.2);
+}
+.isi{
+	position: relative;
+}
+.isi .iz{
+	z-index: 999;
+	position: absolute;
+	  left: 0; 
+  right: 0; 
+ top:0;
+ bottom:0;
+ display:table;
+ height:100%;
+ width:100%;
+ background: rgba(0, 0, 0, 0.4117647058823529);
+}
+.isi .conta{
+	color: #fff;
+	display: table-cell;
+    vertical-align: middle;
+	text-align: center;
+	padding: 10px;
+}
+.isi .conta h1{
+	font-size: 450%;
+}
+.isi .conta p{
+	font-size: 120%;
+}
+.isi .conta a {
+	display: table;
+	margin: 0 auto;
+	background: transparent;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 3px;
+	padding: 5px 15px;
+	text-decoration: none;
+}
+.isi .conta a:hover{
+	background: #fff;
+	color: #000;
+}
+
+@media (max-width: 865px){
+.isi .conta h1{
+	font-size: 200%;
+}
+.isi .conta p{
+	font-size: 100%;
+}
+}
