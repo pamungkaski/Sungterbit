@@ -36,10 +36,9 @@
                         "targets": [ 1 ],"data": null,"orderable": false,"render": function(data, type, full, meta){
                             var e = '<div class="neym">'+data[0]+'</div><div class="d8">'+data[2]+'</div>';//data 0
 
-                            var id = tab
-                                .row(tab.row( $(this).parents('tr') ).index()).data()[3];
+                            var id = data[3];
                             var username = tab
-                                .row(tab.row( $(this).parents('tr') ).index()).data()[0];
+                                data[0];
 
                             if(full[0] === '<?php echo $username?>'){
                                 e += `<div class="bgr"><a href="<?php base_url();?>dashboard/delPost/${id}" class="button">delete</a> <a href="javascript:;" class="sbutton">edit</a></div>`;
@@ -104,23 +103,6 @@
             } );
 
 
-            $('#ezpa tbody').on( 'click', '.sub', function () {
-                var d=tab.row(tab.row( $(this).parents('tr') ).index()).data();
-                tab.row.add( [
-                    d[0],
-                    d[1],
-                    $(this).parents('tr').children('td').eq(1).children('textarea').val(),
-                    d[3]
-                ] ).draw();
-                tab
-                    .row( $(this).parents('tr') )
-                    .remove()
-                    .draw();
-                y=0;
-            });
-
-
-
             $('#ezpa tbody').on( 'click', '.button', function () {
 
                 tab
@@ -128,23 +110,6 @@
                     .remove()
                     .draw();
             } );
-
-
-            var bb = $.ajax({
-                url: './getall.json',
-                async: false,
-                dataType: 'json'
-            }).responseJSON;
-            var k = bb.data;
-            var maxid = 0;
-            k.map(function(obj){
-                if (parseInt(obj[0]) > maxid) maxid = parseInt(obj[0]);
-            });
-            console.log(maxid);
-
-
-
-
 
             $( "#kap" ).submit(function( event ) {
                 maxid++;
